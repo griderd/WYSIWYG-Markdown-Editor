@@ -1,0 +1,20 @@
+<TABLE>
+	<THEAD>
+		<TR>
+			<TH>1</TH>
+			<TH>2</TH>
+			<TH>3</TH>
+		</TR>
+	</THEAD>
+	<TBODY>
+		<TR>
+			<TD>4</TD>
+			<TD>5</TD>
+			<TD>6</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+
+| 1 | 2 | 3 |
+|-|-|-|
+| 4 | 5 | 6 |
