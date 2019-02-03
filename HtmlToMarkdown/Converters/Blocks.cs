@@ -10,6 +10,7 @@ namespace HtmlToMarkdown.Converters
     {
         public void Convert(HtmlNode node, Converter converter)
         {
+            converter.result.AppendLine();
             converter.Parse(node);
         }
     }
@@ -18,6 +19,7 @@ namespace HtmlToMarkdown.Converters
     {
         public void Convert(HtmlNode node, Converter converter)
         {
+            converter.result.AppendLine();
             converter.Parse(node);
         }
     }

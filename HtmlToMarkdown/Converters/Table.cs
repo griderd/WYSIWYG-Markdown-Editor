@@ -9,6 +9,7 @@ namespace HtmlToMarkdown.Converters
     {
         public void Convert(HtmlAgilityPack.HtmlNode node, Converter converter)
         {
+            converter.result.AppendLine();
             converter.flags.Push(Flags.Table);
             converter.IgnoreNewLine = true;
             converter.Parse(node);

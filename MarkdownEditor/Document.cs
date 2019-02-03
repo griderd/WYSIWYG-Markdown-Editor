@@ -7,6 +7,7 @@ using MSHTML;
 using HtmlAgilityPack;
 using System.IO;
 using HtmlToMarkdown;
+using HtmlToMarkdown.Editor.Tables;
 
 namespace MarkdownEditor
 {
@@ -276,6 +277,11 @@ namespace MarkdownEditor
             InsertHTML(string.Format("<img src=\"{0}\" alt=\"{1}\" />", url, alternateText));
         }
 
+        public void InsertTable(Table table)
+        {
+            InsertHTML(table.ToHtml());
+        }
+
         public void InsertTable(int columns, int rows)
         {
             StringBuilder sb = new StringBuilder();
@@ -308,6 +314,22 @@ namespace MarkdownEditor
             sb.Append("</table>");
 
             InsertHTML(sb.ToString());
+        }
+
+        public void Indent()
+        {
+            doc.execCommand("Indent");
+        }
+
+        public void Outdent()
+        {
+            doc.execCommand("Outdent");
+        }
+
+        public void WrapSelection(string tag)
+        {
+            IHTMLTxtRange range = doc.selection.createRange() as IHTMLTxtRange;
+            range.pasteHTML(string.Format("<{0}>{1}</{0}>", tag, range.htmlText));
         }
     }
 }

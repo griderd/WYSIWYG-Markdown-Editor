@@ -65,19 +65,21 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.textTypeList = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBold = new System.Windows.Forms.ToolStripButton();
+            this.btnItalic = new System.Windows.Forms.ToolStripButton();
+            this.btnStrikethrough = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUnorderedList = new System.Windows.Forms.ToolStripButton();
+            this.btnOrderedList = new System.Windows.Forms.ToolStripButton();
+            this.btnIndent = new System.Windows.Forms.ToolStripButton();
+            this.btnOutdent = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvFiles = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.fileTabs = new System.Windows.Forms.TabControl();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
-            this.btnBold = new System.Windows.Forms.ToolStripButton();
-            this.btnItalic = new System.Windows.Forms.ToolStripButton();
-            this.btnStrikethrough = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripButton();
-            this.btnUnorderedList = new System.Windows.Forms.ToolStripButton();
-            this.btnOrderedList = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -247,6 +249,7 @@
             this.codeToolStripMenuItem.Name = "codeToolStripMenuItem";
             this.codeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.codeToolStripMenuItem.Text = "Code...";
+            this.codeToolStripMenuItem.Click += new System.EventHandler(this.codeToolStripMenuItem_Click);
             // 
             // taskListToolStripMenuItem
             // 
@@ -259,12 +262,14 @@
             this.blockQuotesToolStripMenuItem.Name = "blockQuotesToolStripMenuItem";
             this.blockQuotesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.blockQuotesToolStripMenuItem.Text = "Block Quotes...";
+            this.blockQuotesToolStripMenuItem.Click += new System.EventHandler(this.blockQuotesToolStripMenuItem_Click);
             // 
             // linkToolStripMenuItem
             // 
             this.linkToolStripMenuItem.Name = "linkToolStripMenuItem";
             this.linkToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.linkToolStripMenuItem.Text = "Link...";
+            this.linkToolStripMenuItem.Click += new System.EventHandler(this.linkToolStripMenuItem_Click);
             // 
             // headerToolStripMenuItem
             // 
@@ -326,7 +331,9 @@
             this.toolStripSeparator1,
             this.toolStripSeparator3,
             this.btnUnorderedList,
-            this.btnOrderedList});
+            this.btnOrderedList,
+            this.btnIndent,
+            this.btnOutdent});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1112, 25);
@@ -354,10 +361,100 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btnBold
+            // 
+            this.btnBold.CheckOnClick = true;
+            this.btnBold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBold.Image = global::MarkdownEditor.Resource1.Bold;
+            this.btnBold.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBold.Name = "btnBold";
+            this.btnBold.Size = new System.Drawing.Size(23, 22);
+            this.btnBold.Text = "toolStripButton1";
+            this.btnBold.ToolTipText = "Bold";
+            this.btnBold.Click += new System.EventHandler(this.btnBold_Click);
+            // 
+            // btnItalic
+            // 
+            this.btnItalic.CheckOnClick = true;
+            this.btnItalic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnItalic.Image = global::MarkdownEditor.Resource1.Italic;
+            this.btnItalic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnItalic.Name = "btnItalic";
+            this.btnItalic.Size = new System.Drawing.Size(23, 22);
+            this.btnItalic.Text = "toolStripButton2";
+            this.btnItalic.ToolTipText = "Italic";
+            this.btnItalic.Click += new System.EventHandler(this.btnItalic_Click);
+            // 
+            // btnStrikethrough
+            // 
+            this.btnStrikethrough.CheckOnClick = true;
+            this.btnStrikethrough.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnStrikethrough.Image = global::MarkdownEditor.Resource1.Strikethrough;
+            this.btnStrikethrough.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnStrikethrough.Name = "btnStrikethrough";
+            this.btnStrikethrough.Size = new System.Drawing.Size(23, 22);
+            this.btnStrikethrough.Text = "toolStripButton2";
+            this.btnStrikethrough.ToolTipText = "Strikethrough";
+            this.btnStrikethrough.Click += new System.EventHandler(this.btnStrikethrough_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.CheckOnClick = true;
+            this.toolStripSeparator1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripSeparator1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSeparator1.Image")));
+            this.toolStripSeparator1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(53, 22);
+            this.toolStripSeparator1.Tag = "";
+            this.toolStripSeparator1.Text = "<code>";
+            this.toolStripSeparator1.ToolTipText = "Inline code";
+            this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnUnorderedList
+            // 
+            this.btnUnorderedList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUnorderedList.Image = global::MarkdownEditor.Resource1.List_Bullets;
+            this.btnUnorderedList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUnorderedList.Name = "btnUnorderedList";
+            this.btnUnorderedList.Size = new System.Drawing.Size(23, 22);
+            this.btnUnorderedList.Text = "toolStripButton3";
+            this.btnUnorderedList.ToolTipText = "Unordered list";
+            this.btnUnorderedList.Click += new System.EventHandler(this.btnUnorderedList_Click);
+            // 
+            // btnOrderedList
+            // 
+            this.btnOrderedList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOrderedList.Image = global::MarkdownEditor.Resource1.List_Numbered;
+            this.btnOrderedList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOrderedList.Name = "btnOrderedList";
+            this.btnOrderedList.Size = new System.Drawing.Size(23, 22);
+            this.btnOrderedList.Text = "toolStripButton4";
+            this.btnOrderedList.ToolTipText = "Ordered list";
+            // 
+            // btnIndent
+            // 
+            this.btnIndent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnIndent.Image = global::MarkdownEditor.Resource1.Indent;
+            this.btnIndent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIndent.Name = "btnIndent";
+            this.btnIndent.Size = new System.Drawing.Size(23, 22);
+            this.btnIndent.Text = "toolStripButton1";
+            this.btnIndent.Click += new System.EventHandler(this.btnIndent_Click);
+            // 
+            // btnOutdent
+            // 
+            this.btnOutdent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOutdent.Image = global::MarkdownEditor.Resource1.Outdent;
+            this.btnOutdent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOutdent.Name = "btnOutdent";
+            this.btnOutdent.Size = new System.Drawing.Size(23, 22);
+            this.btnOutdent.Text = "toolStripButton1";
+            this.btnOutdent.Click += new System.EventHandler(this.btnOutdent_Click);
             // 
             // splitContainer1
             // 
@@ -410,75 +507,6 @@
             // 
             this.tmrUpdate.Enabled = true;
             this.tmrUpdate.Tick += new System.EventHandler(this.tmrUpdate_Tick);
-            // 
-            // btnBold
-            // 
-            this.btnBold.CheckOnClick = true;
-            this.btnBold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBold.Image = global::MarkdownEditor.Resource1.Bold;
-            this.btnBold.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBold.Name = "btnBold";
-            this.btnBold.Size = new System.Drawing.Size(23, 22);
-            this.btnBold.Text = "toolStripButton1";
-            this.btnBold.ToolTipText = "Bold";
-            this.btnBold.Click += new System.EventHandler(this.btnBold_Click);
-            // 
-            // btnItalic
-            // 
-            this.btnItalic.CheckOnClick = true;
-            this.btnItalic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnItalic.Image = global::MarkdownEditor.Resource1.Italic;
-            this.btnItalic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnItalic.Name = "btnItalic";
-            this.btnItalic.Size = new System.Drawing.Size(23, 22);
-            this.btnItalic.Text = "toolStripButton2";
-            this.btnItalic.ToolTipText = "Italic";
-            this.btnItalic.Click += new System.EventHandler(this.btnItalic_Click);
-            // 
-            // btnStrikethrough
-            // 
-            this.btnStrikethrough.CheckOnClick = true;
-            this.btnStrikethrough.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnStrikethrough.Image = global::MarkdownEditor.Resource1.Strikethrough;
-            this.btnStrikethrough.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnStrikethrough.Name = "btnStrikethrough";
-            this.btnStrikethrough.Size = new System.Drawing.Size(23, 22);
-            this.btnStrikethrough.Text = "toolStripButton2";
-            this.btnStrikethrough.ToolTipText = "Strikethrough";
-            this.btnStrikethrough.Click += new System.EventHandler(this.btnStrikethrough_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.CheckOnClick = true;
-            this.toolStripSeparator1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripSeparator1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSeparator1.Image")));
-            this.toolStripSeparator1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(53, 22);
-            this.toolStripSeparator1.Tag = "";
-            this.toolStripSeparator1.Text = "<code>";
-            this.toolStripSeparator1.ToolTipText = "Inline code";
-            // 
-            // btnUnorderedList
-            // 
-            this.btnUnorderedList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnUnorderedList.Image = global::MarkdownEditor.Resource1.List_Bullets;
-            this.btnUnorderedList.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUnorderedList.Name = "btnUnorderedList";
-            this.btnUnorderedList.Size = new System.Drawing.Size(23, 22);
-            this.btnUnorderedList.Text = "toolStripButton3";
-            this.btnUnorderedList.ToolTipText = "Unordered list";
-            this.btnUnorderedList.Click += new System.EventHandler(this.btnUnorderedList_Click);
-            // 
-            // btnOrderedList
-            // 
-            this.btnOrderedList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnOrderedList.Image = global::MarkdownEditor.Resource1.List_Numbered;
-            this.btnOrderedList.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOrderedList.Name = "btnOrderedList";
-            this.btnOrderedList.Size = new System.Drawing.Size(23, 22);
-            this.btnOrderedList.Text = "toolStripButton4";
-            this.btnOrderedList.ToolTipText = "Ordered list";
             // 
             // frmMain
             // 
@@ -556,6 +584,8 @@
         private System.Windows.Forms.ToolStripMenuItem h4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem h5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem h6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnIndent;
+        private System.Windows.Forms.ToolStripButton btnOutdent;
     }
 }
 

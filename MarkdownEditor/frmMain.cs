@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using HtmlToMarkdown.Editor.Tables;
 
 namespace MarkdownEditor
 {
@@ -100,8 +101,39 @@ namespace MarkdownEditor
             frmInsertTable dlgInsertTable = new frmInsertTable();
             if (dlgInsertTable.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CurrentDocument.InsertTable((int)dlgInsertTable.nudColumns.Value, (int)dlgInsertTable.nudRows.Value);
+                //CurrentDocument.InsertTable((int)dlgInsertTable.nudColumns.Value, (int)dlgInsertTable.nudRows.Value);
+                CurrentDocument.InsertTable(dlgInsertTable.storedTable);
             }
+        }
+
+        private void codeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentDocument.InsertHTML("<pre><code>Your code goes here</pre></code>");
+        }
+
+        private void blockQuotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentDocument.InsertHTML("<block>Your quote goes here</block>");
+        }
+
+        private void linkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIndent_Click(object sender, EventArgs e)
+        {
+            CurrentDocument.Indent();
+        }
+
+        private void btnOutdent_Click(object sender, EventArgs e)
+        {
+            CurrentDocument.Outdent();
+        }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+            CurrentDocument.WrapSelection("code");
         }
     }
 }

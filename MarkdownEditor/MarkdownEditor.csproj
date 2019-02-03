@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GSLib">
+      <HintPath>..\..\Grider Software Libraries\GSLib\GSLib\bin\Release\GSLib.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\..\..\Downloads\HTMLAgilityPack\lib\Net40-client\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -50,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document.cs" />
+    <Compile Include="frmEditTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditTable.Designer.cs">
+      <DependentUpon>frmEditTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInsertImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmEditTable.resx">
+      <DependentUpon>frmEditTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInsertImage.resx">
       <DependentUpon>frmInsertImage.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Bold.bmp" />
+    <None Include="Resources\Outdent.bmp" />
+    <None Include="Resources\IndentRTL.bmp" />
+    <None Include="Resources\Indent.bmp" />
     <None Include="Resources\List_Numbered.bmp" />
     <None Include="Resources\List_Bullets.bmp" />
     <None Include="Resources\Underline.bmp" />

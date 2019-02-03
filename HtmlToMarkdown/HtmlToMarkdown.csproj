@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,8 +49,12 @@
     <Compile Include="Converters\IConverter.cs" />
     <Compile Include="Converters\Blocks.cs" />
     <Compile Include="Converters\Emphasis.cs" />
+    <Compile Include="Converters\img.cs" />
     <Compile Include="Converters\Lists.cs" />
     <Compile Include="Converters\Table.cs" />
+    <Compile Include="Editor\Tables\Cell.cs" />
+    <Compile Include="Editor\Tables\Row.cs" />
+    <Compile Include="Editor\Tables\Table.cs" />
     <Compile Include="Flags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

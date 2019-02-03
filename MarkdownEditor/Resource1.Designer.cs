@@ -73,6 +73,16 @@ namespace MarkdownEditor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Indent {
+            get {
+                object obj = ResourceManager.GetObject("Indent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Italic {
             get {
                 object obj = ResourceManager.GetObject("Italic", resourceCulture);
@@ -96,6 +106,16 @@ namespace MarkdownEditor {
         internal static System.Drawing.Bitmap List_Numbered {
             get {
                 object obj = ResourceManager.GetObject("List_Numbered", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Outdent {
+            get {
+                object obj = ResourceManager.GetObject("Outdent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

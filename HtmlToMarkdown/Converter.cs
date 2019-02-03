@@ -41,6 +41,7 @@ namespace HtmlToMarkdown
             converters.Add("tr", new tr());
             converters.Add("th", new th());
             converters.Add("td", new td());
+            converters.Add("img", new img());
         }
 
         public string Convert(HtmlNode node)
@@ -61,7 +62,10 @@ namespace HtmlToMarkdown
                 {
                     if ((child.InnerText.Trim() == "") & (child.InnerText.Contains("\r\n")) & (IgnoreNewLine))
                         continue;
-                    result.Append(child.InnerText);
+
+                    string text = child.InnerText.Trim();
+                    text = text.Replace("&nbsp;", " ");
+                    result.Append(text);
                 }
                 else
                 {
